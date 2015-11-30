@@ -1,0 +1,42 @@
+body {
+    background-color: #4D5659;
+}
+
+.pageDiv {
+    background-color: #acc7dc;
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    width: 50%;
+}
+
+.postDiv {
+    background-color: #A8DEF0;
+    width: 50%;
+}
+
+.commentDiv {
+    background-color: #d6dde3;
+    left: 5%;
+    width: 90%;
+}
+
+.newCommentDiv {
+    background-color: #d6dde3;
+    maxlength: 200;
+    left: 5%;
+    width: 90%;
+    //height: 20%;
+}
+
+.newCommentTextarea {
+    top: 5%;
+    right: 5%;
+    left: 5%;
+    width: 90%;
+}
+
+img{
+    width: 80%;
+    height: auto;
+}

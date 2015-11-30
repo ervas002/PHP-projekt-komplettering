@@ -1,0 +1,77 @@
+USE CASE 1: Publicera nytt inlägg
+
+Primary Actor: 
+Användare
+
+Stakeholders and Interests:
+* Användaren: Användaren vill göra ett inläggg på bildbloggen.
+* Administratör: Vill att sajten ska fungera utan driftstörningar eller angrepp.
+
+Preconditions:
+* Användaren är inloggad.
+
+Sucess Guarantee:
+* Användaren har visuell bekräftelse om att inlägget publicerats
+
+Main Success Scenario:
+1. Användaren fyller i titel [Alt1: Användaren fyller inte i någon titel]. 
+2. Användaren väljer en bild [Alt2: Användaren väljer ingen bild]. 
+3. Användaren skriver in text för inlägget [Alt3: Användaren skriver ingen text till inlägget].
+4. Användaren klickar på skicka knappen.
+5. Sidan behandlar användarens data.
+6. Sidan laddas på nytt med det nya inlägget publicerat[Alt4: Indata var felaktig]. 
+
+Alternative Flows:
+Alt 1: Flödet fortsätter vid Main Success Scenario steg 2.
+Alt 2: Flödet fortsätter vid Main Success Scenario steg 3.
+Alt 3: Flödet fortsätter vid Main Success Scenario steg 4.
+Alt 4: Användaren meddelas om att det gick fel och Use caset tar slut.
+
+USE CASE 2: Kommentera bild
+
+Primary Actor: 
+Användare
+
+Story:
+Inloggad användare skriver in sin kommentar och trycker skicka. Eventuella HTML tags fixas till och kommentaren publiceras så länge den passerar valideringen.
+
+USE CASE 3: Registrera användare
+
+Primary Actor: 
+Användare
+
+Story:
+Användare fyller i alla fält under registreringen och tillrättavisas vid eventuella snedsteg. Fylls allt i som det ska så registreras användaren efter att ha tryckt på registrera-knappen.
+
+USE CASE 4: Logga in
+
+Primary Actor: 
+Användare
+
+Story:
+Användaren fyller i sina inloggningsuppgifter och klickar logga in. Är uppgifterna korrekta så loggas användaren in och dirigeras till blogg-sidan. Är något felaktigt så får användaren reda på det. 
+
+
+USE CASE 6: Redigera inlägg
+
+Primary Actor: 
+Användare
+
+Story:
+Inloggad användare klickar på redigera knappen på ett inlägg dom äger. Efter att ha skrivit in ny data och klickat på sparaknappen så lagras ändringarna om dom passerar valideringen. 
+
+USE CASE 7: Redigera kommentar
+
+Primary Actor: 
+Användare
+
+Story:
+Inloggad användare klickar på redigera knappen på en kommentar dom äger. Efter att ha skrivit in ny data och klickat på sparaknappen så lagras ändringarna om dom passerar valideringen. 
+
+USER CASE 8: Logga ut
+
+Primary Actor: 
+Användare
+
+Story:
+Inloggad användare klickar på logga ut knappen. Loggas ut.

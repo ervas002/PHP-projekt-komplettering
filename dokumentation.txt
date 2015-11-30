@@ -1,0 +1,1 @@
+Jag anser att koden är kommenterad där det behövs. De enda bitar jag skippat är de där namnet på funktionen är väldigt självförklarande samt funktionen i sig förhållandevis liten.
