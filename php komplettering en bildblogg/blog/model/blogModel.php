@@ -42,12 +42,13 @@ Class BlogModel{
 
     //Lagrar den uppladdade bilden.
     public function storePicture($picture){
-
-        $newName = $this->stripFilename($picture['name']);
+        $oldName = $this->stripFilename($picture['name']);
+        $newName = $oldName;
         $extraString = 1;
         while($this->fileNameExists($newName)){
-            //Riktigt ful lösning men det fungerar tills vidare
-            $newName .= $extraString++;
+
+            $newName = $extraString . $oldName;
+            $extraString++;
         }
         move_uploaded_file($picture['tmp_name'], self::STORAGE_LOCATION . $newName);
         return $newName;
