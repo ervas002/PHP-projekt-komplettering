@@ -20,6 +20,7 @@ Class Session{
                 return true;
             }else{
                 unset($_SESSION[$this->logInSession]);
+                unset($_SESSION[$this->security]);
                 session_destroy();
                 return false;
             }

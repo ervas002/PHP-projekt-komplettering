@@ -6,6 +6,9 @@ require_once 'logIn/controller/logInController.php';
 $session = new Session();
 if($session->isLoggedIn()){
     $session->logOut();
+    echo'gick in här!';
+    var_dump("vafan?");
+    header('Location: ./sign-in.php');
 }
 $logInController = new LogInController();
 echo $logInController->getHTML($session);

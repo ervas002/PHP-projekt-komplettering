@@ -6,13 +6,15 @@ body {
     background-color: #acc7dc;
     position: absolute;
     top: 10%;
-    left: 30%;
-    width: 50%;
+    left: 5%;
+    width: 90%;
 }
 
 .postDiv {
     background-color: #A8DEF0;
     width: 50%;
+    border-radius: 1%;
+    margin: auto;
 }
 
 .commentDiv {
@@ -39,4 +41,11 @@ body {
 img{
     width: 80%;
     height: auto;
+}
+
+.newPostForm
+{
+    background-color: #24748c;
+    width: 50%;
+    margin: auto;
 }

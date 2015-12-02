@@ -18,6 +18,7 @@ Class RegisterDAL{
         if($db->isSuccess()){
             $dbConnection = $db->getCon();
             $rows = $dbConnection->query("CALL isUserFree('$username')");
+            var_dump($rows);
             if(mysqli_num_rows($rows)>0){
                 $dbConnection->close();
                 return false;

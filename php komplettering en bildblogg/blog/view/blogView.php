@@ -41,9 +41,11 @@ Class BlogView{
     public function getHTML($postsArray, $picStoragePath){
 
         $postDivs = $this->getPostDivs($postsArray, $picStoragePath);
+        $logOut = "";
 
         if($this->isLoggedIn){
             $newPostForm = $this->getSubmitPostForm();
+            $logOut = "<a href='sign-in.php'>Logga ut</a>";
         }else{
             $newPostForm = "<a href='sign-in.php'>Logga in ifall du vill kunna posta inlägg och kommentera!</a>";
         }
@@ -61,7 +63,7 @@ Class BlogView{
 				  </head>
 				  <body>
 				    <div class='pageDiv'>
-				        <a href='sign-in.php'>Logga ut</a>
+				        $logOut
 				        <p id='errors' hidden>$this->errors</p>
                         $newPostForm
                         $postDivs
@@ -93,7 +95,7 @@ Class BlogView{
                     $editPostForm = "<form method='post' role='form' enctype='multipart/form-data'>
                         <input type='hidden' name='" . self::EDIT_POST . "'>
                         <input type='hidden' name='" . self::EDIT_POST_ID . "' value='$post->postId'>
-                        <input type='text' name='" . self::EDIT_POST_TITLE . "' id='" . self::EDIT_POST_TITLE . "' placeholder='Ny titel (max 100 tecken)' value=''>
+                        <input autocomplete='off' type='text' name='" . self::EDIT_POST_TITLE . "' id='" . self::EDIT_POST_TITLE . "' placeholder='Ny titel (max 100 tecken)' value=''>
                         <input type='file' name='" . self::EDIT_POST_PICTURE . "' id='" . self::EDIT_POST_PICTURE . "'>
                         <textarea name='" . self::EDIT_POST_CONTENT . "'>$post->content</textarea>
                         <input type='submit' value='Spara ändring'/>
@@ -153,11 +155,11 @@ Class BlogView{
     }
 
     private function getSubmitPostForm(){
-        return "<form id='newPostForm' method='post' role='form' enctype='multipart/form-data'>
+        return "<form id='newPostForm' class='newPostForm' method='post' role='form' enctype='multipart/form-data'>
                 <input type='hidden' name='" . self::NEW_POST . "'>
-                <input type='text' name='" . self::NEW_POST_TITLE . "' id='" . self::NEW_POST_TITLE . "' placeholder='Titel (max 100 tecken)' value=''>
+                <input autocomplete='off' type='text' name='" . self::NEW_POST_TITLE . "' id='" . self::NEW_POST_TITLE . "' placeholder='Titel (max 100 tecken)' value=''>
                 <input type='file' name='" . self::NEW_POST_PICTURE . "' id='" . self::NEW_POST_PICTURE . "'>
-                <input type='text' name='" . self::NEW_POST_CONTENT . "' id='" . self::NEW_POST_CONTENT . "' placeholder='Innehåll (max 200 tecken)'>
+                <input autocomplete='off' type='text' name='" . self::NEW_POST_CONTENT . "' id='" . self::NEW_POST_CONTENT . "' placeholder='Innehåll (max 200 tecken)'>
                 <input type='submit' id='submitPostButton' name='submitPostButton'/>
             </form>";
     }

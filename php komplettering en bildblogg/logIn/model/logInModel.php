@@ -1,7 +1,7 @@
 <?php
 
 require_once 'logInDAL.php';
-require_once 'encryption/encryption.php';
+require_once '/encryption/encryption.php';
 
 Class LogInModel{
 
